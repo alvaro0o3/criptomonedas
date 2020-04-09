@@ -22,8 +22,15 @@ const Boton = styled.input`
 
 const Formulario = () => {
 
+    const MONEDAS = [
+        { codigo: 'USD', nombre: 'Dolar de Estados Unidos' },
+        { codigo: 'EUR', nombre: 'Euro' },
+        { codigo: 'MXN', nombre: 'Peso Mexicano' },
+        { codigo: 'GBP', nombre: 'Libra' }
+    ];
+
     // Usar custom hook useMoneda
-    const [moneda, setMoneda, SelectMonedas] = useMoneda();
+    const [moneda, SelectMonedas] = useMoneda('Selecciona la divisa', '', MONEDAS);
 
     return (
         <form>
